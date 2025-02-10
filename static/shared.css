@@ -1,0 +1,171 @@
+:root {
+	--foreground: #000000;
+	--background: #ffffff;
+
+	--primary: #ff6139;
+	--primary-light: #ff616b;
+	--primary-dark: #9b0800;
+
+	--secondary: #ff8800;
+	--secondary-1: #1e8e3e;
+	--secondary-2: #d93025;
+	--secondary-3: #1967d2;
+
+	--neutral-4: #58616d;
+
+	--border: 1px solid var(--foreground);
+	--boxshadow: 0 0 2px var(--background);
+
+	--text-shadow: 0px 0px 1px var(--background), 1px 1px 2px var(--background),
+		2px 2px 3px var(--background);
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+	background-color: transparent;
+	background: var(--background);
+	color: var(--foreground);
+	font:
+		400 16px / 1.4 hauss,
+		Tahoma,
+		Sans-Serif;
+	font-style: normal;
+	-webkit-font-variant-ligatures: none;
+	font-variant-ligatures: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+h2,
+h3 {
+	font-size: 1.75rem;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+ul,
+li {
+	list-style: none;
+}
+header {
+	position: fixed;
+	top: 0;
+	display: flex;
+	width: 100%;
+	height: 6rem;
+	padding: 0 1rem;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+	z-index: 9999;
+	font-size: 1.5rem;
+}
+header:before {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: hsla(0, 0%, 100%, 0.8);
+	bottom: 0;
+	content: '';
+	z-index: -10;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.container {
+	padding: 0 2rem;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1280px;
+}
+main {
+	font-size: 1.5rem;
+	padding-top: 5rem;
+}
+.content {
+	padding: 2rem 0;
+	height: 200vh;
+}
+footer {
+	font-size: 1.5rem;
+}
+/* Стили для таблиц */
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th,
+td {
+	padding: 0.5rem;
+	border: 1px solid var(--primary);
+	text-align: left;
+}
+/* Дополнительный стиль для темной темы */
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+		background-color: var(--background);
+	}
+	body {
+		background-color: var(--background);
+	}
+	:root {
+		--background: #ffffff;
+		--foreground: #33363a;
+		--foreground-0: #33363a00;
+
+		--primary: #171717;
+	}
+	.container {
+		background-color: var(--background);
+	}
+	th,
+	td {
+		border-color: var(--primary); /* Цвет границы для темной темы */
+	}
+}
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(-100%);
+}
+/* roller */
+.roller_wrap {
+	text-align: center;
+	padding: 5rem;
+}
+.roller {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	border: 10px solid var(--background);
+	border-radius: 50%;
+	border-top-color: var(--secondary-2);
+	will-change: transform;
+	animation: spin 1s ease-in-out infinite;
+	-webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+/* roller end */
