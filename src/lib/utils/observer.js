@@ -9,7 +9,7 @@ export function fadeInOnScroll(node) {
 				}
 			});
 		},
-		{ threshold: 0.5 }
+		{ threshold: 0.3 }
 	);
 
 	observer.observe(node);

@@ -8,7 +8,7 @@
 	let isMounted = false;
 
 	onMount(() => {
-		isMounted = true; // Устанавливаем флаг, как только компонент смонтирован на клиенте
+		isMounted = true;
 	});
 </script>
 
@@ -58,7 +58,9 @@
 			<div>{@html main_page[0][`join_text_${$locale}`]}</div>
 		</section>
 		<div class="slogan hidden" use:fadeInOnScroll>{@html main_page[0][`slogan_${$locale}`]}</div>
-		<TheButton>{@html main_page[0][`button_${$locale}`]}</TheButton>
+		<div class="btn_wrap hidden" use:fadeInOnScroll>
+			<TheButton>{@html main_page[0][`button_${$locale}`]}</TheButton>
+		</div>
 	</div>
 {:else}
 	<div class="visible">Loading...</div>
@@ -84,10 +86,10 @@
 		width: 80%;
 		margin: 0 auto 2rem;
 		aspect-ratio: 9/6;
-		border-radius: 2rem;
+		border-radius: var(--radius-out);
 		overflow: hidden;
 		transition: all 0.9s ease-in;
-		will-change: transform;
+		animation: fadeUp 2s;
 	}
 	.img_wrap img {
 		width: 100%;
@@ -132,7 +134,7 @@
 		min-width: 300px;
 		aspect-ratio: 1;
 		margin-bottom: auto;
-		border-radius: 2rem;
+		border-radius: var(--radius-out);
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
@@ -161,15 +163,10 @@
 		transition: all 0.9s ease-in;
 	}
 
-	@keyframes fadeUp {
-		from {
-			opacity: 0;
-			transform: translateY(50px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	.btn_wrap {
+		width: 100%;
+		display: flex;
+		transition: all 0.9s ease-in;
 	}
 
 	.hidden {

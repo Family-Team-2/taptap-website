@@ -5,25 +5,36 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		const storedLang =
-			localStorage.getItem('locale') || (navigator.language.startsWith('ru') ? 'ru' : 'en');
-		locale.set(storedLang);
-
-		// Проверяем текущий путь
-		const currentPath = window.location.pathname;
-		const langPrefix = `/${storedLang}`;
-
-		// Если локаль не совпадает с текущим путем, делаем редирект
-		if (!currentPath.startsWith(langPrefix)) {
-			goto(langPrefix, { replaceState: true });
-		}
-	});
 	let isMounted = false;
 
+	function updateURL(newLang) {
+		if (typeof window === 'undefined') return;
+
+		const currentPath = window.location.pathname;
+		const match = currentPath.match(/^\/(ru|en)(\/|$)/);
+		const newPath = match
+			? currentPath.replace(/^\/(ru|en)/, `/${newLang}`)
+			: `/${newLang}${currentPath}`;
+
+		if (currentPath !== newPath) {
+			goto(newPath, { replaceState: true });
+		}
+	}
+
 	onMount(() => {
-		isMounted = true; // Set flag once the component has mounted on the client
+		isMounted = true;
+
+		if (typeof window !== 'undefined') {
+			const storedLang =
+				localStorage.getItem('locale') || (navigator.language.startsWith('ru') ? 'ru' : 'en');
+			locale.set(storedLang);
+			updateURL(storedLang);
+		}
 	});
+
+	$: {
+		if (isMounted) updateURL($locale);
+	}
 </script>
 
 <header class:isHidden={$isHidden}>

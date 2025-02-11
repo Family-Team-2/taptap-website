@@ -3,30 +3,41 @@
 	import TheSocial from '$lib/components/TheSocial.svelte';
 	import { footer_links } from '$lib/data/footer_link';
 	import { locale } from '$lib/stores/locale.js';
+	import { onMount } from 'svelte';
+
+	let isMounted = false;
+
+	onMount(() => {
+		isMounted = true;
+	});
 </script>
 
 <footer>
 	<div class="container">
-		<div class="bottom_line">
-			{#each footer_links as item}
-				{#if item.link}
-					<a href={`/${$locale}${item.link}`} rel={item.rel} class="link">
-						{@html item[`title_${$locale}`]}
-					</a>
-				{:else}
-					<span>{@html item[`title_${$locale}`]}</span>
-					<ul>
-						{#each item.submenu as sub}
-							<li>
-								<a href={`/${$locale}${sub.link}`} rel={sub.rel}>
-									{@html sub[`title_${$locale}`]}
-								</a>
-							</li>
-						{/each}
-					</ul>
-				{/if}
-			{/each}
-		</div>
+		{#if isMounted}
+			<div class="bottom_line">
+				{#each footer_links as item}
+					{#if item.link}
+						<a href={`/${$locale}${item.link}`} rel={item.rel} class="link">
+							{@html item[`title_${$locale}`]}
+						</a>
+					{:else}
+						<span>{@html item[`title_${$locale}`]}</span>
+						<ul>
+							{#each item.submenu as sub}
+								<li>
+									<a href={`/${$locale}${sub.link}`} rel={sub.rel}>
+										{@html sub[`title_${$locale}`]}
+									</a>
+								</li>
+							{/each}
+						</ul>
+					{/if}
+				{/each}
+			</div>
+		{:else}
+			<div>Loading...</div>
+		{/if}
 		<TheSocial />
 		<Copyright />
 	</div>
