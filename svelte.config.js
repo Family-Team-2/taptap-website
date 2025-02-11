@@ -10,7 +10,7 @@ const config = {
 		// adapter: adapter()
 
 		adapter: adapter({
-			runtime: 'nodejs18.x'
+			runtime: 'nodejs20.x' // Актуальная версия Node.js
 		})
 	}
 };
