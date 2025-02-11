@@ -1,13 +1,29 @@
 <script>
-	import { onDestroy } from 'svelte';
 	import { locale, setLocale } from '$lib/stores/locale.js';
 	import { isHidden } from '$lib/utils/scroll.js';
 	import { navItems } from '$lib/data/nav.js';
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-	let currentLocale = 'en';
-	const unsubscribe = locale.subscribe((value) => (currentLocale = value));
+	onMount(() => {
+		const storedLang =
+			localStorage.getItem('locale') || (navigator.language.startsWith('ru') ? 'ru' : 'en');
+		locale.set(storedLang);
 
-	onDestroy(unsubscribe);
+		// Проверяем текущий путь
+		const currentPath = window.location.pathname;
+		const langPrefix = `/${storedLang}`;
+
+		// Если локаль не совпадает с текущим путем, делаем редирект
+		if (!currentPath.startsWith(langPrefix)) {
+			goto(langPrefix, { replaceState: true });
+		}
+	});
+	let isMounted = false;
+
+	onMount(() => {
+		isMounted = true; // Set flag once the component has mounted on the client
+	});
 </script>
 
 <header class:isHidden={$isHidden}>
@@ -19,105 +35,76 @@
 				</a>
 			</div>
 			<div class="line_right">
-				<nav class="nav">
-					<ul>
-						{#each navItems as item}
-							<li>
-								{#if item.link}
-									<a href={item.link} rel={item.rel}>
-										{currentLocale === 'ru' ? item.title_ru : item.title_en}
-									</a>
-								{:else}
-									<span>{currentLocale === 'ru' ? item.title_ru : item.title_en}</span>
-									<ul>
-										{#each item.submenu as sub}
-											<li>
-												<a href={sub.link} rel={sub.rel}>
-													{currentLocale === 'ru' ? sub.title_ru : sub.title_en}
-												</a>
-											</li>
-										{/each}
-									</ul>
-								{/if}
-							</li>
-						{/each}
-					</ul>
-				</nav>
-				{#if currentLocale === 'ru'}
-					<button
-						on:click={() => setLocale('en')}
-						class="locale-btn"
-						aria-label="Switch to English"
-					>
-						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							class="locale-icon"
-						>
-							<path
-								d="M12.6087 22.8696C18.1316 22.8696 22.6087 18.3924 22.6087 12.8696C22.6087 7.34672 18.1316 2.86956 12.6087 2.86956C7.08586 2.86956 2.6087 7.34672 2.6087 12.8696C2.6087 18.3924 7.08586 22.8696 12.6087 22.8696Z"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M2.6087 12.8696H22.6087"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M12.6087 2.86956C15.11 5.60792 16.5315 9.1616 16.6087 12.8696C16.5315 16.5775 15.11 20.1312 12.6087 22.8696C10.1074 20.1312 8.68595 16.5775 8.6087 12.8696C8.68595 9.1616 10.1074 5.60792 12.6087 2.86956Z"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</button>
+				{#if isMounted}
+					<nav class="nav">
+						<ul>
+							{#each navItems as item}
+								<li>
+									{#if item.link}
+										<a href={`/${$locale}${item.link}`} rel={item.rel}>
+											{@html item[`title_${$locale}`]}
+										</a>
+									{:else}
+										<span>{@html item[`title_${$locale}`]}</span>
+										<ul>
+											{#each item.submenu as sub}
+												<li>
+													<a href={`/${$locale}${sub.link}`} rel={sub.rel}>
+														{@html sub[`title_${$locale}`]}
+													</a>
+												</li>
+											{/each}
+										</ul>
+									{/if}
+								</li>
+							{/each}
+						</ul>
+					</nav>
 				{:else}
-					<button
-						on:click={() => setLocale('ru')}
-						class="locale-btn"
-						aria-label="Switch to Russian"
-					>
-						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							class="locale-icon"
-						>
-							<path
-								d="M12.6087 22.8696C18.1316 22.8696 22.6087 18.3924 22.6087 12.8696C22.6087 7.34672 18.1316 2.86956 12.6087 2.86956C7.08586 2.86956 2.6087 7.34672 2.6087 12.8696C2.6087 18.3924 7.08586 22.8696 12.6087 22.8696Z"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M2.6087 12.8696H22.6087"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M12.6087 2.86956C15.11 5.60792 16.5315 9.1616 16.6087 12.8696C16.5315 16.5775 15.11 20.1312 12.6087 22.8696C10.1074 20.1312 8.68595 16.5775 8.6087 12.8696C8.68595 9.1616 10.1074 5.60792 12.6087 2.86956Z"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</button>
+					<div>Loading...</div>
 				{/if}
+
+				<!-- Кнопка переключения языка -->
+				<button
+					onclick={() => {
+						const newLang = $locale === 'ru' ? 'en' : 'ru';
+						setLocale(newLang); // Обновляем store с новым языком
+						goto(`/${newLang}`, { replaceState: true }); // Перенаправляем на новую локаль
+					}}
+					class="locale-btn"
+					aria-label="Switch language"
+				>
+					<svg
+						width="25"
+						height="25"
+						viewBox="0 0 25 25"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						class="locale-icon"
+					>
+						<path
+							d="M12.6087 22.8696C18.1316 22.8696 22.6087 18.3924 22.6087 12.8696C22.6087 7.34672 18.1316 2.86956 12.6087 2.86956C7.08586 2.86956 2.6087 7.34672 2.6087 12.8696C2.6087 18.3924 7.08586 22.8696 12.6087 22.8696Z"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<path
+							d="M2.6087 12.8696H22.6087"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<path
+							d="M12.6087 2.86956C15.11 5.60792 16.5315 9.1616 16.6087 12.8696C16.5315 16.5775 15.11 20.1312 12.6087 22.8696C10.1074 20.1312 8.68595 16.5775 8.6087 12.8696C8.68595 9.1616 10.1074 5.60792 12.6087 2.86956Z"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</button>
 			</div>
 		</div>
 	</div>

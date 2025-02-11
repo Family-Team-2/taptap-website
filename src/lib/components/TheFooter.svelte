@@ -1,5 +1,53 @@
+<script>
+	import Copyright from '$lib/components/Copyright.svelte';
+	import TheSocial from '$lib/components/TheSocial.svelte';
+	import { footer_links } from '$lib/data/footer_link';
+	import { locale } from '$lib/stores/locale.js';
+</script>
+
 <footer>
 	<div class="container">
-		<h2>Footer</h2>
+		<div class="bottom_line">
+			{#each footer_links as item}
+				{#if item.link}
+					<a href={`/${$locale}${item.link}`} rel={item.rel} class="link">
+						{@html item[`title_${$locale}`]}
+					</a>
+				{:else}
+					<span>{@html item[`title_${$locale}`]}</span>
+					<ul>
+						{#each item.submenu as sub}
+							<li>
+								<a href={`/${$locale}${sub.link}`} rel={sub.rel}>
+									{@html sub[`title_${$locale}`]}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			{/each}
+		</div>
+		<TheSocial />
+		<Copyright />
 	</div>
 </footer>
+
+<style>
+	.bottom_line {
+		display: flex;
+		flex-basis: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 1rem 0;
+		gap: 2rem;
+	}
+	.link {
+		display: block;
+		color: inherit;
+		transition: all 0.3s ease-in;
+	}
+	.link:hover {
+		color: var(--primary);
+	}
+</style>

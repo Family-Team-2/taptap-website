@@ -69,7 +69,7 @@ header {
 	align-items: center;
 	transition: all 0.3s ease-in-out;
 	z-index: 9999;
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 header:before {
 	-webkit-backdrop-filter: blur(10px);
@@ -84,7 +84,7 @@ header:before {
 	top: 0;
 }
 .container {
-	padding: 0 2rem;
+	padding: 0 3rem;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1280px;
@@ -94,11 +94,11 @@ main {
 	padding-top: 5rem;
 }
 .content {
-	padding: 2rem 0;
-	height: 200vh;
+	padding: 0 0 2rem 0;
 }
 footer {
 	font-size: 1.5rem;
+	padding-bottom: 1rem;
 }
 /* Стили для таблиц */
 table {
