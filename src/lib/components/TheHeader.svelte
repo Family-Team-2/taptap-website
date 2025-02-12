@@ -170,13 +170,11 @@
 		height: 100%;
 		max-height: 100%;
 	}
-
 	.line {
 		display: flex;
-		direction: row;
+		flex-direction: row;
 		width: 100%;
 		justify-content: space-between;
-		align-items: center;
 		align-items: center;
 	}
 	.line_left {
