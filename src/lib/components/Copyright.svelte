@@ -8,7 +8,9 @@
 
 <style>
 	.copyright {
+		margin-top: 0.5rem;
 		font-size: 1rem;
+		text-align: center;
 	}
 	@media (max-width: 480px) {
 		.copyright {
