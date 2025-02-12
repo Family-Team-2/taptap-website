@@ -161,16 +161,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 64px;
-		max-height: 64px;
+		height: 3.5rem;
+		width: auto;
 		overflow: hidden;
-		aspect-ratio: 4 / 1;
 	}
 	.img_wrap svg {
 		width: 100%;
-		height: auto;
+		height: 100%;
 		max-height: 100%;
-		object-fit: cover;
 	}
 
 	.line {
@@ -229,11 +227,7 @@
 			display: none;
 		}
 		.img_wrap {
-			height: 48px;
-			max-height: 48px;
-		}
-		.img_wrap svg {
-			max-height: 48px;
+			height: 3rem;
 		}
 	}
 	@media (max-width: 480px) {
@@ -242,12 +236,7 @@
 		}
 
 		.img_wrap {
-			transform: translateX(-4px);
-			height: 44px;
-			max-height: 44px;
-		}
-		.img_wrap svg {
-			max-height: 44px;
+			height: 2rem;
 		}
 		.line_right {
 			gap: 0.5rem;
