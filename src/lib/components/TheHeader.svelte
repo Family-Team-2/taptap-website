@@ -231,7 +231,7 @@
 		}
 
 		.img_wrap {
-			width: 7rem;
+			width: 8rem;
 		}
 		.line_right {
 			gap: 0.5rem;
