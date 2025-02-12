@@ -161,8 +161,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 3.5rem;
-		width: auto;
+		width: 10rem;
+		height: auto;
 		overflow: hidden;
 	}
 	.img_wrap svg {
@@ -224,9 +224,6 @@
 		.nav {
 			display: none;
 		}
-		.img_wrap {
-			height: 3rem;
-		}
 	}
 	@media (max-width: 480px) {
 		.nav {
@@ -234,7 +231,7 @@
 		}
 
 		.img_wrap {
-			height: 2rem;
+			width: 7rem;
 		}
 		.line_right {
 			gap: 0.5rem;
