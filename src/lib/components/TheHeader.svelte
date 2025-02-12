@@ -140,11 +140,17 @@
 	}
 
 	.img_wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 4rem;
+		max-height: 4rem;
+		overflow: hidden;
 	}
 	.img_wrap img {
 		width: 100%;
-		height: 100%;
+		height: auto;
+		max-height: 100%;
 		object-fit: cover;
 	}
 
@@ -205,15 +211,24 @@
 		}
 		.img_wrap {
 			height: 3rem;
+			max-height: 3rem;
+		}
+		.img_wrap img {
+			max-height: 3rem;
 		}
 	}
 	@media (max-width: 480px) {
 		.nav {
 			display: none;
 		}
+
 		.img_wrap {
-			height: 2.8rem;
 			transform: translateX(-4px);
+			height: 2.8rem;
+			max-height: 2.8rem;
+		}
+		.img_wrap img {
+			max-height: 2.8rem;
 		}
 		.line_right {
 			gap: 0.5rem;
