@@ -22,17 +22,11 @@
 <NewsCarousel data={article_list} />
 
 <style>
-	h1 {
-		margin: 1rem auto;
-		font-size: 3rem;
-		display: block;
-		animation: fadeUp 2s;
-	}
 	.games-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1rem;
 		justify-content: center;
-		animation: fadeUp 2s;
+		animation: fadeUp 1.5s;
 	}
 </style>

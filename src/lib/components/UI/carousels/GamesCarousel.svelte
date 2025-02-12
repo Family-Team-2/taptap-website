@@ -1,8 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 	import TheGameItem from '$lib/components/games/TheGameItem.svelte';
+	import { locale } from '$lib/stores/locale.js';
+	import { page_titles } from '$lib/data/page_titles';
 
 	export let data = [];
+
+	let isMounted = false;
 
 	let scrollContainer;
 	let canScrollLeft = false;
@@ -36,11 +40,12 @@
 	};
 
 	onMount(() => {
+		isMounted = true;
 		checkScroll();
 	});
 </script>
 
-<h2>Игры</h2>
+<h2>{page_titles.games[$locale]}</h2>
 <div class="main_container">
 	<button
 		class="scroll-btn left"

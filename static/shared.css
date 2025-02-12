@@ -45,8 +45,12 @@ body {
 	-moz-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 }
+
 h1 {
-	font-size: 2rem;
+	margin: 1rem auto;
+	font-size: 3rem;
+	display: block;
+	animation: fadeUp 1.5s;
 	text-align: center;
 }
 h2,
@@ -70,7 +74,7 @@ header {
 	padding: 0 1rem;
 	align-items: center;
 	transition: all 0.3s ease-in-out;
-	z-index: 9999;
+	z-index: 8;
 	font-size: 2rem;
 }
 header:before {
@@ -102,17 +106,54 @@ footer {
 	font-size: 1.5rem;
 	padding-bottom: 1rem;
 }
-/* Стили для таблиц */
-table {
-	width: 100%;
-	border-collapse: collapse;
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(-100%);
 }
-th,
-td {
-	padding: 0.5rem;
-	border: 1px solid var(--primary);
-	text-align: left;
+
+/*адаптив*/
+@media (max-width: 1000px) {
+	h1 {
+		font-size: 2.5rem;
+	}
 }
+@media (max-width: 768px) {
+	.container {
+		padding: 0 2rem;
+	}
+	main {
+		font-size: 1.25rem;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+	h2,
+	h3 {
+		font-size: 1.5rem;
+	}
+	footer {
+		font-size: 1.25rem;
+		padding-bottom: 1rem;
+	}
+}
+@media (max-width: 480px) {
+	.container {
+		padding: 0 1.5rem;
+	}
+	main {
+		font-size: 1.1rem;
+	}
+	h1 {
+		font-size: 1.5rem;
+	}
+	h2,
+	h3 {
+		font-size: 1.25rem;
+	}
+}
+
 /* Дополнительный стиль для темной темы */
 @media (prefers-color-scheme: dark) {
 	html {
@@ -136,12 +177,6 @@ td {
 	td {
 		border-color: var(--primary); /* Цвет границы для темной темы */
 	}
-}
-
-.hidden {
-	opacity: 0;
-	pointer-events: none;
-	transform: translateY(-100%);
 }
 
 @keyframes fadeUp {

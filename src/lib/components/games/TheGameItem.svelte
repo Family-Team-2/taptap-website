@@ -20,7 +20,7 @@
 		</div>
 	</a>
 {:else}
-	<div>Loading...</div>
+	<p class="roller"></p>
 {/if}
 
 <style>
@@ -39,6 +39,7 @@
 		padding: 0.5rem;
 		position: relative;
 		box-shadow: var(--boxshadow);
+		margin: 0 auto;
 	}
 	.figure:hover {
 		transform: scale(1.05);
@@ -76,5 +77,12 @@
 		font-size: 1.5rem;
 		font-weight: normal;
 		text-align: start;
+	}
+	@media (max-width: 480px) {
+		.figcaption h2 {
+			font-size: 1.25rem;
+			font-weight: normal;
+			text-align: start;
+		}
 	}
 </style>

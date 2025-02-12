@@ -57,13 +57,13 @@
 			<h2>{@html main_page[0][`join_title_${$locale}`]}</h2>
 			<div>{@html main_page[0][`join_text_${$locale}`]}</div>
 		</section>
-		<div class="slogan hidden" use:fadeInOnScroll>{@html main_page[0][`slogan_${$locale}`]}</div>
+		<h2 class="slogan hidden" use:fadeInOnScroll>{@html main_page[0][`slogan_${$locale}`]}</h2>
 		<div class="btn_wrap hidden" use:fadeInOnScroll>
 			<TheButton>{@html main_page[0][`button_${$locale}`]}</TheButton>
 		</div>
 	</div>
 {:else}
-	<div class="visible">Loading...</div>
+	<div class="visible roller"></div>
 {/if}
 
 <style>
@@ -72,12 +72,7 @@
 		flex-direction: column;
 		gap: 3rem;
 	}
-	h1 {
-		margin: 1rem auto;
-		font-size: 3rem;
-		display: block;
-		animation: fadeUp 2s;
-	}
+
 	h1 strong {
 		color: var(--primary);
 	}
@@ -89,7 +84,7 @@
 		border-radius: var(--radius-out);
 		overflow: hidden;
 		transition: all 0.9s ease-in;
-		animation: fadeUp 2s;
+		animation: fadeUp 1.5s;
 	}
 	.img_wrap img {
 		width: 100%;
@@ -157,10 +152,9 @@
 	}
 
 	.slogan {
-		font-weight: bold;
-		font-size: 2rem;
 		margin: 0 auto;
 		transition: all 0.9s ease-in;
+		text-align: center;
 	}
 
 	.btn_wrap {
@@ -177,5 +171,42 @@
 	.visible {
 		opacity: 1;
 		transform: translateY(0) scale(1);
+	}
+	@media (max-width: 768px) {
+		.main_page {
+			gap: 2rem;
+		}
+		.img_wrap {
+			width: 90%;
+		}
+		section + section {
+			margin-top: 1.5rem;
+		}
+		.section-desc {
+			flex-direction: column;
+		}
+		.section-img_wrap {
+			width: 80%;
+			flex: 1 1 auto;
+			margin: 0 auto;
+		}
+
+		.wedo .section-desc {
+			flex-direction: column-reverse;
+		}
+	}
+	@media (max-width: 480px) {
+		.main_page {
+			gap: 1.5rem;
+		}
+		.img_wrap {
+			width: 100%;
+		}
+		section + section {
+			margin-top: 1rem;
+		}
+		.section-img_wrap {
+			width: 100%;
+		}
 	}
 </style>

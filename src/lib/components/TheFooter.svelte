@@ -36,7 +36,7 @@
 				{/each}
 			</div>
 		{:else}
-			<div>Loading...</div>
+			<p class="roller"></p>
 		{/if}
 		<TheSocial />
 		<Copyright />
@@ -60,5 +60,16 @@
 	}
 	.link:hover {
 		color: var(--primary);
+	}
+
+	@media (max-width: 768px) {
+		.bottom_line {
+			gap: 1rem;
+		}
+	}
+	@media (max-width: 480px) {
+		.bottom_line {
+			gap: 0.5rem;
+		}
 	}
 </style>

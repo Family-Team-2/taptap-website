@@ -22,17 +22,16 @@
 <GamesCarousel data={games_list} />
 
 <style>
-	h1 {
-		margin: 1rem auto;
-		font-size: 3rem;
-		display: block;
-		animation: fadeUp 2s;
-	}
 	.articles_list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1rem;
 		justify-content: center;
-		animation: fadeUp 2s;
+		animation: fadeUp 1.5s;
+	}
+	@media (max-width: 1000px) {
+		.articles_list {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
 	}
 </style>

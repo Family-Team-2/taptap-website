@@ -4,9 +4,19 @@
 	import { navItems } from '$lib/data/nav.js';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import TheMobileNav from './TheMobileNav.svelte';
+	import TheBurger from './UI/buttons/TheBurger.svelte';
 
 	let isMounted = false;
+	let isNavOpen = false;
 
+	function toggleNav() {
+		isNavOpen = !isNavOpen;
+	}
+	function closeNav() {
+		console.log('Закрытие меню через оверлей');
+		isNavOpen = false;
+	}
 	function updateURL(newLang) {
 		if (typeof window === 'undefined') return;
 
@@ -72,7 +82,7 @@
 						</ul>
 					</nav>
 				{:else}
-					<div>Loading...</div>
+					<p class="roller"></p>
 				{/if}
 
 				<!-- Кнопка переключения языка -->
@@ -84,8 +94,7 @@
 					}}
 					class="locale-btn"
 					aria-label="Switch language"
-				>
-					<svg
+					><svg
 						width="25"
 						height="25"
 						viewBox="0 0 25 25"
@@ -116,10 +125,14 @@
 						/>
 					</svg>
 				</button>
+				<TheBurger {toggleNav} {isNavOpen} />
 			</div>
 		</div>
 	</div>
 </header>
+{#if isNavOpen}
+	<TheMobileNav bind:isOpen={isNavOpen} {closeNav} {toggleNav} />
+{/if}
 
 <style>
 	header.isHidden {
@@ -173,15 +186,22 @@
 		font-size: 20px;
 		line-height: 1;
 		cursor: pointer;
+		border-color: inherit;
 		transition: background-color 0.3s ease;
 		color: var(--primary);
+		background: none;
 	}
 	.locale-icon {
 		width: 100%;
 		height: 100%;
-		stroke: currentColor; /* это позволяет менять цвет иконки с помощью CSS */
+		stroke: currentColor;
 	}
 	.locale-btn:hover {
 		color: var(--primary-light);
+	}
+	@media (max-width: 768px) {
+		.nav {
+			display: none;
+		}
 	}
 </style>
