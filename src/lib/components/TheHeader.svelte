@@ -143,8 +143,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 4rem;
-		max-height: 4rem;
+		height: 64px;
+		max-height: 64px;
 		overflow: hidden;
 	}
 	.img_wrap img {
@@ -210,11 +210,11 @@
 			display: none;
 		}
 		.img_wrap {
-			height: 3rem;
-			max-height: 3rem;
+			height: 48px;
+			max-height: 48px;
 		}
 		.img_wrap img {
-			max-height: 3rem;
+			max-height: 48px;
 		}
 	}
 	@media (max-width: 480px) {
@@ -224,11 +224,11 @@
 
 		.img_wrap {
 			transform: translateX(-4px);
-			height: 2.8rem;
-			max-height: 2.8rem;
+			height: 44px;
+			max-height: 44px;
 		}
 		.img_wrap img {
-			max-height: 2.8rem;
+			max-height: 44px;
 		}
 		.line_right {
 			gap: 0.5rem;
