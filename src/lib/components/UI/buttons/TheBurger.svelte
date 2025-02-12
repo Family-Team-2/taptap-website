@@ -98,4 +98,10 @@
 			display: inline-block;
 		}
 	}
+	@media (max-width: 480px) {
+		.menu {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
+	}
 </style>

@@ -19,6 +19,7 @@
 		margin: 0 auto;
 		color: inherit;
 		text-decoration: none;
+		color: var(--background);
 	}
 
 	.button:hover {
@@ -28,5 +29,11 @@
 	.button:disabled {
 		background-color: #ccc;
 		cursor: not-allowed;
+	}
+	@media (max-width: 768px) {
+		.button {
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+		}
 	}
 </style>

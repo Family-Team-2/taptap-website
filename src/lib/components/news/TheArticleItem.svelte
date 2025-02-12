@@ -94,11 +94,16 @@
 		background-color: var(--background);
 		padding: 0.5rem 1rem;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
 		.figcaption h2 {
 			font-size: 1.25rem;
 			font-weight: normal;
 			text-align: start;
+		}
+	}
+	@media (max-width: 480px) {
+		.figcaption h2 {
+			font-size: 1rem;
 		}
 	}
 </style>

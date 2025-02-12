@@ -207,4 +207,20 @@
 			height: 3rem;
 		}
 	}
+	@media (max-width: 480px) {
+		.nav {
+			display: none;
+		}
+		.img_wrap {
+			height: 2.8rem;
+			transform: translateX(-4px);
+		}
+		.line_right {
+			gap: 0.5rem;
+		}
+		.locale-btn {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
+	}
 </style>

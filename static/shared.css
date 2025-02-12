@@ -122,11 +122,16 @@ footer {
 	.container {
 		padding: 0 2rem;
 	}
+	header {
+		height: 5rem;
+	}
 	main {
+		padding-top: 5rem;
 		font-size: 1.25rem;
 	}
 	h1 {
 		font-size: 2rem;
+		margin: 0.8rem auto;
 	}
 	h2,
 	h3 {
@@ -136,45 +141,39 @@ footer {
 		font-size: 1.25rem;
 		padding-bottom: 1rem;
 	}
+	.content {
+		padding: 0 0 1.5rem 0;
+	}
 }
 @media (max-width: 480px) {
 	.container {
 		padding: 0 1.5rem;
 	}
+	header {
+		height: 4rem;
+	}
 	main {
+		padding-top: 4rem;
 		font-size: 1.1rem;
 	}
 	h1 {
 		font-size: 1.5rem;
+		margin: 0.5rem auto;
 	}
 	h2,
 	h3 {
 		font-size: 1.25rem;
 	}
+	.content {
+		padding: 0 0 1rem 0;
+	}
 }
 
 /* Дополнительный стиль для темной темы */
 @media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-		background-color: var(--background);
-	}
-	body {
-		background-color: var(--background);
-	}
 	:root {
-		--background: #ffffff;
-		--foreground: #33363a;
-		--foreground-0: #33363a00;
-
-		--primary: #171717;
-	}
-	.container {
-		background-color: var(--background);
-	}
-	th,
-	td {
-		border-color: var(--primary); /* Цвет границы для темной темы */
+		--foreground: #ffffff;
+		--background: #33363a;
 	}
 }
 

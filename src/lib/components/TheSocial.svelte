@@ -157,8 +157,8 @@
 <style>
 	.icons-line {
 		display: flex;
-		font-size: 2rem;
-		gap: 10px;
+		height: 1.5rem;
+		gap: 1rem;
 		align-items: center;
 		justify-content: center;
 		color: var(--primary);
@@ -171,10 +171,22 @@
 		width: 2rem;
 		height: 2rem;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
+		.icons-line {
+			gap: 0.8rem;
+		}
 		svg.icon {
-			width: 1.5rem;
-			height: 1.5rem;
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	}
+	@media (max-width: 480px) {
+		.icons-line {
+			gap: 0.5rem;
+		}
+		svg.icon {
+			width: 1.2rem;
+			height: 1.2rem;
 		}
 	}
 </style>

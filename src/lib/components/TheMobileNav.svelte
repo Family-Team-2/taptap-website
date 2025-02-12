@@ -101,7 +101,7 @@
 			position: fixed;
 			top: 0;
 			right: -100%;
-			width: 50%;
+			width: 60%;
 			height: 100%;
 			background: var(--background);
 			display: flex;
@@ -166,6 +166,24 @@
 		.mnavigation ul li ul li:hover {
 			background-color: var(--primary);
 			color: var(--foreground);
+		}
+
+		.socials_wrapper {
+			margin-top: auto;
+			padding: 1rem 0;
+		}
+	}
+	@media (max-width: 480px) {
+		.mnavigation {
+			padding: 5rem 1rem 1rem;
+		}
+
+		.mnavigation ul {
+			gap: 0.3rem;
+		}
+
+		.mnavigation ul li {
+			padding: 0.4rem 0.7rem;
 		}
 
 		.socials_wrapper {

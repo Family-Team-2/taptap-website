@@ -66,10 +66,17 @@
 		.bottom_line {
 			gap: 1rem;
 		}
+		.link {
+			font-size: 1rem;
+		}
 	}
 	@media (max-width: 480px) {
 		.bottom_line {
 			gap: 0.5rem;
+			padding: 0.5rem 0;
+		}
+		.link {
+			font-size: 0.8rem;
 		}
 	}
 </style>
