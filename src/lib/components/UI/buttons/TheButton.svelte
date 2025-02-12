@@ -17,6 +17,8 @@
 		transition: 0.3s;
 		background-color: var(--primary);
 		margin: 0 auto;
+		color: inherit;
+		text-decoration: none;
 	}
 
 	.button:hover {

@@ -79,7 +79,7 @@
 
 	.img_wrap {
 		width: 80%;
-		margin: 0 auto 2rem;
+		margin: 0 auto;
 		aspect-ratio: 9/6;
 		border-radius: var(--radius-out);
 		overflow: hidden;
@@ -101,11 +101,8 @@
 		width: 100%;
 		transition: all 0.9s ease-in;
 	}
-	section + section {
-		margin-top: 2rem;
-	}
+
 	h2 {
-		margin-bottom: 0.5rem;
 		display: block;
 	}
 	.mission,
@@ -179,9 +176,7 @@
 		.img_wrap {
 			width: 90%;
 		}
-		section + section {
-			margin-top: 1.5rem;
-		}
+
 		.section-desc {
 			flex-direction: column;
 		}
@@ -202,9 +197,7 @@
 		.img_wrap {
 			width: 100%;
 		}
-		section + section {
-			margin-top: 1rem;
-		}
+
 		.section-img_wrap {
 			width: 100%;
 		}

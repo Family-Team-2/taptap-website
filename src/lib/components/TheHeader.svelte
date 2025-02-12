@@ -203,5 +203,8 @@
 		.nav {
 			display: none;
 		}
+		.img_wrap {
+			height: 3rem;
+		}
 	}
 </style>

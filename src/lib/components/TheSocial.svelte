@@ -171,4 +171,10 @@
 		width: 2rem;
 		height: 2rem;
 	}
+	@media (max-width: 480px) {
+		svg.icon {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
 </style>

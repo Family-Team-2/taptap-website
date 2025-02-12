@@ -10,4 +10,9 @@
 	.copyright {
 		font-size: 1rem;
 	}
+	@media (max-width: 480px) {
+		.copyright {
+			font-size: 0.6rem;
+		}
+	}
 </style>
