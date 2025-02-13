@@ -1,5 +1,4 @@
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,9 +8,17 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		// adapter: adapter()
 
-		adapter: adapter({
-			runtime: 'nodejs20.x' // Актуальная версия Node.js
-		})
+		adapter: adapter({}),
+		prerender: {
+			entries: [
+				'*',
+				'/[lang]',
+				'/[lang]/games',
+				'/[lang]/games/[id]',
+				'/[lang]/news',
+				'/[lang]/news/[id]'
+			]
+		}
 	}
 };
 

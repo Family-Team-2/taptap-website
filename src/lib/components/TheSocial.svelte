@@ -48,7 +48,7 @@
 			</defs>
 		</svg>
 	</a>
-	<a href="linkedIn" class="link" aria-label="LinkedIn" rel="nofollow"
+	<a href="#" class="link" aria-label="LinkedIn" rel="nofollow"
 		><svg
 			class="icon"
 			width="25"
@@ -80,7 +80,7 @@
 			/>
 		</svg>
 	</a>
-	<a href="https://twitter" class="link" aria-label="twitter: +90" rel="nofollow"
+	<a href="#" class="link" aria-label="twitter: +90" rel="nofollow"
 		><svg
 			class="icon"
 			width="25"
@@ -105,7 +105,7 @@
 			</defs>
 		</svg>
 	</a>
-	<a href="https://youtube/+90" class="link" aria-label="youtube: +90" rel="nofollow"
+	<a href="#" class="link" aria-label="youtube: +90" rel="nofollow"
 		><svg
 			class="icon"
 			width="25"
