@@ -1,30 +1,26 @@
 export const footer_links = [
 	{
-		title_ru: ' info@taptap.name',
-		title_en: ' info@taptap.name',
-		link: '/#',
-		rel: 'nofollow',
-		submenu: []
-	},
-	{
 		title_ru: 'Контакты',
 		title_en: 'Contacts',
-		link: '/#',
+		link: 'mailto:info@taptap.name',
 		rel: 'nofollow',
-		submenu: []
+		submenu: [],
+		target: '_blank'
 	},
 	{
 		title_ru: 'Условия использования',
 		title_en: 'Terms of use',
 		link: '/#',
 		rel: 'nofollow',
-		submenu: []
+		submenu: [],
+		target: '_blank'
 	},
 	{
 		title_ru: 'Поддержка',
 		title_en: 'Support',
-		link: '/#',
+		link: 'https://t.me/TapTapStudio',
 		rel: 'nofollow',
-		submenu: []
+		submenu: [],
+		target: '_blank'
 	}
 ];
