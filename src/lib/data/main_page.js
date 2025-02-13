@@ -41,7 +41,7 @@ export const main_page = [
 			"We are always in touch and open to communication! Follow our progress and don't miss announcements for new games and updates. Together, we can change the rules in the world of games and create something truly amazing!",
 		slogan_ru: 'TapTap – меняем мир игр, одно прикосновение за раз.',
 		slogan_en: 'TapTap – changing the world of games, one touch at a time.',
-		button_ru: 'Присоединится',
-		button_en: 'Join'
+		button_ru: 'Присоеденится к нашему сообществу!',
+		button_en: 'Join to our community!'
 	}
 ];

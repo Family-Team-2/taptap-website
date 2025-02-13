@@ -26,7 +26,7 @@
 		</div>
 	</a>
 {:else}
-	<p class="roller"></p>
+	<p></p>
 {/if}
 
 <style>

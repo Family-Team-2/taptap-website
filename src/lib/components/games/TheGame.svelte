@@ -28,7 +28,7 @@
 		</div>
 	</article>
 {:else}
-	<p class="roller"></p>
+	<p></p>
 {/if}
 
 <style>
@@ -39,7 +39,7 @@
 		border-radius: var(--radius-out);
 		overflow: hidden;
 		transition: all 0.9s ease-in;
-		animation: fadeUp 1.5s;
+		animation: fadeUp 0.1s;
 	}
 	.img_wrap img {
 		width: 100%;

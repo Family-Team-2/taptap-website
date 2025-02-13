@@ -65,7 +65,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="visible roller"></div>
+	<div></div>
 {/if}
 
 <style>
@@ -86,7 +86,7 @@
 		border-radius: var(--radius-out);
 		overflow: hidden;
 		transition: all 0.9s ease-in;
-		animation: fadeUp 1.5s;
+		animation: fadeUp 0.1s;
 	}
 	.img_wrap img {
 		width: 100%;
@@ -95,9 +95,9 @@
 		transition: all 0.9s ease-in;
 		will-change: transform;
 	}
-	.img_wrap:hover img {
+	/* .img_wrap:hover img {
 		transform: scale(1.2);
-	}
+	} */
 
 	section {
 		width: 100%;
@@ -167,10 +167,6 @@
 		transform: translateY(50px) scale(0.9);
 	}
 
-	.visible {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-	}
 	@media (max-width: 768px) {
 		.main_page {
 			gap: 2rem;

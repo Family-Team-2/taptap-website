@@ -1,6 +1,6 @@
 <script>
 	import { locale, setLocale } from '$lib/stores/locale.js';
-	import { isHidden } from '$lib/utils/scroll.js';
+	// import { isHidden } from '$lib/utils/scroll.js';
 	import { navItems } from '$lib/data/nav.js';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
@@ -47,7 +47,8 @@
 	}
 </script>
 
-<header class:isHidden={$isHidden}>
+<!-- <header class:isHidden={$isHidden}> -->
+<header>
 	<div class="container">
 		<div class="line">
 			<div class="line_left">
@@ -100,15 +101,15 @@
 						</ul>
 					</nav>
 				{:else}
-					<p class="roller"></p>
+					<p></p>
 				{/if}
 
 				<!-- Кнопка переключения языка -->
 				<button
 					onclick={() => {
 						const newLang = $locale === 'ru' ? 'en' : 'ru';
-						setLocale(newLang); // Обновляем store с новым языком
-						goto(`/${newLang}`, { replaceState: true }); // Перенаправляем на новую локаль
+						setLocale(newLang);
+						goto(`/${newLang}`, { replaceState: true });
 					}}
 					class="locale-btn"
 					aria-label="Switch language"
@@ -153,9 +154,9 @@
 {/if}
 
 <style>
-	header.isHidden {
+	/* header.isHidden {
 		transform: translateY(-100%);
-	}
+	} */
 
 	.img_wrap {
 		display: flex;

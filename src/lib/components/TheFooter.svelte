@@ -36,7 +36,7 @@
 				{/each}
 			</div>
 		{:else}
-			<p class="roller"></p>
+			<p></p>
 		{/if}
 		<TheSocial />
 		<Copyright />
@@ -57,6 +57,8 @@
 		display: block;
 		color: inherit;
 		transition: all 0.3s ease-in;
+		text-decoration: underline;
+		color: var(--primary);
 	}
 	.link:hover {
 		color: var(--primary);

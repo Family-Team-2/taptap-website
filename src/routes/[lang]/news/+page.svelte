@@ -27,7 +27,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1rem;
 		justify-content: center;
-		animation: fadeUp 1.5s;
+		animation: fadeUp 0.1s;
 	}
 	@media (max-width: 1000px) {
 		.articles_list {
