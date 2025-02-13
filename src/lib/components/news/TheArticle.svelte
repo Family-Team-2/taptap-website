@@ -19,7 +19,7 @@
 			<img src={item.img} alt={item.title[$locale]} />
 		</div>
 		<p>{item.date}</p>
-		<p>{item.author[$locale]}</p>
+		<!-- <p>{item.author[$locale]}</p> -->
 		<p>{item.subtitle[$locale]}</p>
 		<div class="item">
 			{@html item.html[$locale]}

@@ -26,6 +26,7 @@ export const games_list = [
 			google_play:
 				'https://play.google.com/store/apps/details?id=com.TapTap.MafiaBirminghamGangWars&pli=1',
 			app_store: 'https://apps.apple.com/us/app/heroes/id123456'
-		}
+		},
+		button_text: { ru: 'Скачать', en: 'Download' }
 	}
 ];
