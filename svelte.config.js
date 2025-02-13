@@ -8,17 +8,9 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		// adapter: adapter()
 
-		adapter: adapter({}),
-		prerender: {
-			entries: [
-				'*',
-				'/[lang]',
-				'/[lang]/games',
-				'/[lang]/games/[id]',
-				'/[lang]/news',
-				'/[lang]/news/[id]'
-			]
-		}
+		adapter: adapter({
+			fallback: 'index.html'
+		})
 	}
 };
 
