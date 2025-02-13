@@ -2,7 +2,7 @@ export const main_page = [
 	{
 		title_text_ru: `Откройте для себя `,
 		title_text_en: `Discover `,
-		title_name_ru: `ТапТап`,
+		title_name_ru: `TapTap`,
 		title_name_en: `Taptap`,
 
 		about_title_ru: 'О нас',

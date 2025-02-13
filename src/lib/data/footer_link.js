@@ -1,7 +1,7 @@
 export const footer_links = [
 	{
-		title_ru: 'Работа с данными',
-		title_en: 'Privacy policy',
+		title_ru: ' info@taptap.name',
+		title_en: ' info@taptap.name',
 		link: '/#',
 		rel: 'nofollow',
 		submenu: []
@@ -16,20 +16,6 @@ export const footer_links = [
 	{
 		title_ru: 'Условия использования',
 		title_en: 'Terms of use',
-		link: '/#',
-		rel: 'nofollow',
-		submenu: []
-	},
-	{
-		title_ru: 'Родителям',
-		title_en: 'Parent’s Guide',
-		link: '/#',
-		rel: 'nofollow',
-		submenu: []
-	},
-	{
-		title_ru: 'Прессе',
-		title_en: 'Press Center',
 		link: '/#',
 		rel: 'nofollow',
 		submenu: []

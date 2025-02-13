@@ -1,9 +1,9 @@
 <script>
-	export let props = {};
+	let { props, children } = $props();
 </script>
 
 <button {...props} class="button">
-	<slot></slot>
+	{@render children()}
 </button>
 
 <style>

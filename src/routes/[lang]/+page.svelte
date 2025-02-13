@@ -59,7 +59,9 @@
 		</section>
 		<h2 class="slogan hidden" use:fadeInOnScroll>{@html main_page[0][`slogan_${$locale}`]}</h2>
 		<div class="btn_wrap hidden" use:fadeInOnScroll>
-			<TheButton>{@html main_page[0][`button_${$locale}`]}</TheButton>
+			<TheButton props={{ onclick: () => window.open('https://t.me/TapTapStudio', '_blank') }}>
+				{@html main_page[0][`button_${$locale}`]}
+			</TheButton>
 		</div>
 	</div>
 {:else}
