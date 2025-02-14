@@ -120,6 +120,7 @@
 		justify-content: center;
 		align-items: center;
 		opacity: 1;
+		z-index: 8;
 		visibility: visible;
 		transition:
 			opacity 0.3s ease,

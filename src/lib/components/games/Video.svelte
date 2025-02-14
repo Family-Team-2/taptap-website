@@ -14,11 +14,12 @@
 
 <style>
 	.video-player {
+		display: block;
 		width: 100%;
 		max-width: 800px;
 		border-radius: 10px;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		margin-top: 1rem;
+		margin: 1rem auto;
 	}
 	@media (max-width: 480px) {
 		.video-player {
