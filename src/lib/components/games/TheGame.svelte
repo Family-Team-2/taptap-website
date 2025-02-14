@@ -5,6 +5,7 @@
 	import TheButton from '$lib/components/UI/buttons/TheButton.svelte';
 	import { main_page } from '$lib/data/main_page.js';
 	import Galery from './Galery.svelte';
+	import VideoPlayer from './Video.svelte';
 
 	export let item;
 
@@ -23,6 +24,12 @@
 		<p>{item.release_date}</p>
 		<p>{item.description[$locale]}</p>
 		<Galery />
+		<VideoPlayer
+			src="/games/Timeline_7_full.mp4"
+			poster="/games/67.webp"
+			autoplay={false}
+			muted={true}
+		/>
 		<div class="button_wrap">
 			<a href={item.store_links.google_play} aria-label="link"
 				><svg
