@@ -24,7 +24,7 @@
 		<p>{item.description[$locale]}</p>
 		<Galery />
 		<div class="button_wrap">
-			<a href="item.store_links['google_play']" aria-label="link"
+			<a href={item.store_links.google_play} aria-label="link"
 				><svg
 					fill="none"
 					height="741"
