@@ -14,7 +14,6 @@
 		isNavOpen = !isNavOpen;
 	}
 	function closeNav() {
-		console.log('Закрытие меню через оверлей');
 		isNavOpen = false;
 	}
 	function updateURL(newLang) {
