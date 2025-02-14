@@ -5,7 +5,7 @@ export const footer_links = [
 		link: '/contacts',
 		rel: 'nofollow',
 		submenu: [],
-		target: '_blank'
+		target: '_self'
 	},
 	{
 		title_ru: 'Поддержка',

@@ -18,7 +18,7 @@
 			<div class="bottom_line">
 				{#each footer_links as item}
 					{#if item.link}
-						<a href={`${item.link}`} rel={item.rel} class="link" target={item.target}>
+						<a href={`/${$locale}${item.link}`} rel={item.rel} class="link">
 							{@html item[`title_${$locale}`]}
 						</a>
 					{:else}
