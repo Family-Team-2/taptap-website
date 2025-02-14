@@ -38,15 +38,45 @@
 
 <div class="gallery">
 	{#each images as { src, alt }, index}
-		<div class="gallery-item" onclick={() => openModal(index)}>
+		<div
+			class="gallery-item"
+			onclick={() => openModal(index)}
+			role="button"
+			tabindex="0"
+			onkeydown={(event) => {
+				if (event.key === 'Enter' || event.key === ' ') {
+					openModal(index);
+				}
+			}}
+		>
 			<img {src} {alt} class="image" loading="lazy" />
 		</div>
 	{/each}
 </div>
 
 {#if currentIndex >= 0}
-	<div class="modal" onclick={closeModal}>
-		<div class="modal-content" onclick={stopPropagation}>
+	<div
+		class="modal"
+		onclick={closeModal}
+		role="button"
+		tabindex="0"
+		onkeydown={(event) => {
+			if (event.key === 'Enter' || event.key === ' ') {
+				openModal(index);
+			}
+		}}
+	>
+		<div
+			class="modal-content"
+			onclick={stopPropagation}
+			role="button"
+			tabindex="0"
+			onkeydown={(event) => {
+				if (event.key === 'Enter' || event.key === ' ') {
+					openModal(index);
+				}
+			}}
+		>
 			<button class="close-btn" onclick={closeModal}>X</button>
 			<img src={images[currentIndex].src} alt={images[currentIndex].alt} class="full-image" />
 			<div class="controls">
