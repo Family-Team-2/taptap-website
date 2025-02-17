@@ -25,7 +25,7 @@
 		<p>{item.description[$locale]}</p>
 		<Galery />
 
-		<VideoPlayer src="" poster="/games/67.webp" autoplay={false} muted={true} />
+		<VideoPlayer src="/games/video.mp4" poster="/games/67.webp" autoplay={false} muted={true} />
 		<div class="button_wrap">
 			<a href={item.store_links.google_play} aria-label="link"
 				><svg
